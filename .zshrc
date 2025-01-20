@@ -77,6 +77,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
+alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
 
