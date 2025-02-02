@@ -37,7 +37,7 @@ zinit cdreplay -q
 
 # Install oh-my-posh
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/dotfiles/.config/ohmyposh/zen.toml)"
+  eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/.config/ohmyposh/zen.toml)"
 fi
 
 # Keybindings
@@ -78,7 +78,7 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Source secrets
-[[ -f ~/.secrets ]] && source ~/.secrets
+[[ -f ~/dotfiles/.secrets ]] && source ~/dotfiles/.secrets
 
 # Setting UTF-8 terminal support
 LC_CTYPE=en_US.UTF-8
