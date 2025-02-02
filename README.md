@@ -34,5 +34,7 @@ $ stow .
 ```
 
 Resources:
+
 https://www.youtube.com/watch?v=y6XCebnB9gs
+
 https://typecraft.dev/tutorial/never-lose-your-configs-again
