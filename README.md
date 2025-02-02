@@ -33,4 +33,6 @@ Then use GNU stow to create symlinks
 $ stow .
 ```
 
-A great resource: https://www.youtube.com/watch?v=y6XCebnB9gs
+Resources:
+https://www.youtube.com/watch?v=y6XCebnB9gs
+https://typecraft.dev/tutorial/never-lose-your-configs-again
