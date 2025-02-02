@@ -15,7 +15,7 @@ brew install git
 ### Stow
 
 ```
-brew isntall stow
+brew install stow
 ```
 
 ## Installation
@@ -27,7 +27,7 @@ $ git clone git@github.com/sturner-forge-dev/dotfiles.git
 $ cd dotfiles
 ```
 
-then use GNU stow to create symlinks
+Then use GNU stow to create symlinks
 
 ```
 $ stow .
