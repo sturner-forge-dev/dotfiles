@@ -72,13 +72,14 @@ alias c='clear'
 alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
+alias createcommit="~/AutoPay/scripts/create_commit.sh"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Source secrets
-[[ -f ~/dotfiles/.secrets ]] && source ~/dotfiles/.secrets
+[[ -f ~/.secrets ]] && source ~/.secrets
 
 # Setting UTF-8 terminal support
 LC_CTYPE=en_US.UTF-8
