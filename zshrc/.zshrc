@@ -73,6 +73,7 @@ alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
 alias createcommit="~/AutoPay/scripts/create_commit.sh"
+alias createbranch="~/AutoPay/scripts/create_branch.sh"
 
 # Shell integrations
 eval "$(fzf --zsh)"
