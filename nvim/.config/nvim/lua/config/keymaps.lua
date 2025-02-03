@@ -2,4 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.api.nvim_set_keymap("n", "<leader>se", "<CMD>lua Snacks.picker.explorer()<CR>", { desc = "Open Snacks Explorer" })
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>e",
+  "<CMD>lua Snacks.picker.explorer()<CR>",
+  { desc = "Open Snacks Explorer", noremap = true }
+)
