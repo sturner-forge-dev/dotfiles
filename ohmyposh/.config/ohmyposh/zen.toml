@@ -39,7 +39,7 @@ final_space = true
     background='transparent'
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}↓{{ end }}{{ if gt .Ahead 0 }}↑{{ end }}</>'
 
-    [blovks.segments.properties]
+    [blocks.segments.properties]
       fetch_status = true
       commit_icon = '@'
 
