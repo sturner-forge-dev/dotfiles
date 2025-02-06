@@ -30,7 +30,12 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
-      provider = "claude",
+      provider = "gemini",
+      gemini = {
+        model = "gemini-2.0-flash",
+        temperature = 0,
+        max_tokens = 8192,
+      },
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-5-sonnet-latest",
