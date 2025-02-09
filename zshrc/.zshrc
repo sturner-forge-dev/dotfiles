@@ -72,6 +72,7 @@ alias c='clear'
 alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
+alias tks="tmux kill-session"
 
 # Shell integrations
 eval "$(fzf --zsh)"
