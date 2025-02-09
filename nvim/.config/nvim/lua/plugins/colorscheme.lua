@@ -3,7 +3,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
-    priority = 1000,
+    priority = 0,
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
@@ -29,9 +29,18 @@ return {
     end,
   },
   {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("everforest").setup({})
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "everforest",
     },
   },
 }
