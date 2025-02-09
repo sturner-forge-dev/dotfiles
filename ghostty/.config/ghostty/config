@@ -3,7 +3,7 @@ auto-update = check
 auto-update-channel = tip
 
 # defaults
-theme = catppuccin-frappe
+theme = Everforest Dark - Hard
 font-size = 13
 font-family = JetBrainsMono NFM Regular
 fullscreen = true
