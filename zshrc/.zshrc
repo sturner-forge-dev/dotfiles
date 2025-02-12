@@ -40,6 +40,15 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/.config/ohmyposh/zen.toml)"
 fi
 
+# Homebrew setup
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Only start borders if it's not already running
+  if ! brew services list | grep borders | grep started > /dev/null; then
+    brew services start borders
+  fi
+fi
+
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
@@ -75,6 +84,7 @@ alias python=/usr/bin/python3
 alias createcommit="~/AutoPay/scripts/create_commit.sh"
 alias createbranch="~/AutoPay/scripts/create_branch.sh"
 alias tks="tmux kill-server"
+alias ta="tmux attach"
 
 # Shell integrations
 eval "$(fzf --zsh)"

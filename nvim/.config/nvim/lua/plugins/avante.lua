@@ -30,7 +30,7 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
-      provider = "gemini",
+      provider = "claude",
       gemini = {
         model = "gemini-2.0-flash",
         temperature = 0,
