@@ -40,6 +40,15 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/.config/ohmyposh/zen.toml)"
 fi
 
+# Homebrew setup
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Only start borders if it's not already running
+  if ! brew services list | grep borders | grep started > /dev/null; then
+    brew services start borders
+  fi
+fi
+
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
@@ -69,10 +78,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias vim='nvim'
 alias c='clear'
-alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
 alias tks="tmux kill-session"
+alias ta="tmux attach"
+alias tls="tmux ls"
 
 # Shell integrations
 eval "$(fzf --zsh)"
