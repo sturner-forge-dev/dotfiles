@@ -105,3 +105,6 @@ function y() {
 # Setting UTF-8 terminal support
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+
+# bun completions
+[ -s "/Users/steventurner/.bun/_bun" ] && source "/Users/steventurner/.bun/_bun"
