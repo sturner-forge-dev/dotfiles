@@ -30,6 +30,9 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
+      rag_service = {
+        enabled = false, -- requires Docker or OrbStack
+      },
       provider = "claude",
       gemini = {
         model = "gemini-2.0-flash",
@@ -38,9 +41,14 @@ return {
       },
       claude = {
         endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-sonnet-latest",
+        model = "claude-3-7-sonnet-latest",
         temperature = 0,
-        max_tokens = 8192,
+        max_tokens = 10000,
+        disable_tools = true,
+        --thinking = {
+        --type = "enabled",
+        --budget_tokens = 2048,
+        --},
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

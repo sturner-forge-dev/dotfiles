@@ -85,6 +85,7 @@ alias createcommit="~/AutoPay/scripts/create_commit.sh"
 alias createbranch="~/AutoPay/scripts/create_branch.sh"
 alias tks="tmux kill-server"
 alias ta="tmux attach"
+alias tls="tmux ls"
 
 # Shell integrations
 eval "$(fzf --zsh)"
