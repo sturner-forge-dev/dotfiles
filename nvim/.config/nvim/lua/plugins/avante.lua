@@ -30,7 +30,7 @@ return {
       behaviour = {
         auto_suggestions = false,
       },
-      provider = "openai",
+      provider = "claude",
       claude = {
         endpoint = "https://api.anthropic.com",
         model = "claude-3-7-sonnet-latest",
