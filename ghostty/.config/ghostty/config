@@ -11,6 +11,7 @@ minimum-contrast = 1.6
 window-padding-x = 2
 window-inherit-working-directory = true
 mouse-hide-while-typing = true
+working-directory = /Users/steventurner/AutoPay/los-ui
 
 # quick terminal behavior
 #keybind = global:shift+cmd+enter=toggle_quick_terminal

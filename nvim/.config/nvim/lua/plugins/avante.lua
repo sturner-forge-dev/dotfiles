@@ -28,12 +28,13 @@ return {
         },
       },
       behaviour = {
+        enable_claude_text_editor_tool_mode = false,
         auto_suggestions = false,
       },
       rag_service = {
         enabled = false, -- requires Docker or OrbStack
       },
-      provider = "claude",
+      provider = "openai",
       gemini = {
         model = "gemini-2.0-flash",
         temperature = 0,
@@ -44,11 +45,18 @@ return {
         model = "claude-3-7-sonnet-latest",
         temperature = 0,
         max_tokens = 10000,
-        disable_tools = true,
+        disable_tools = { "python" },
         --thinking = {
         --type = "enabled",
         --budget_tokens = 2048,
         --},
+      },
+      openai = {
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-4.1",
+        temperature = 0,
+        max_tokens = 10000,
+        disable_tools = true,
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
