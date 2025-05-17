@@ -15,12 +15,12 @@ return {
         no_bold = false,
         styles = {
           comments = { "italic" },
-          keywords = { "italic" },
-          functions = { "italic" },
-          variables = { "italic" },
+          keywords = {},
+          functions = {},
+          variables = {},
           strings = {},
           numbers = {},
-          types = {},
+          types = { "italic" },
           properties = {},
           operators = {},
         },
@@ -40,7 +40,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
