@@ -3,11 +3,11 @@ auto-update = check
 auto-update-channel = tip
 
 # defaults
-theme = Everforest Dark - Hard
+theme = catppuccin-macchiato
 font-size = 13
 font-family = JetBrainsMono NFM Regular
 fullscreen = true
-minimum-contrast = 1.6 
+minimum-contrast = 1.8
 window-padding-x = 2
 window-inherit-working-directory = true
 mouse-hide-while-typing = true

@@ -2,8 +2,16 @@
 -- with some breaking changes, multiple methods have been changed
 -- therefore (for now) a workaround is needed for Mason to still work in LazyVim
 -- THIS WILL PIN the VERSION number, remove this file later, when it's no longer needed
-return {
-  { "mason-org/mason.nvim", version = "1.11.0" },
-  { "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
-}
+-- return {
+-- { "mason-org/mason.nvim", version = "1.11.0" },
+-- { "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
+-- }
+-- return {
+-- {
+-- "LazyVim/LazyVim",
+--     url = "https://github.com/dpetka2001/LazyVim",
+--     branch = "fix/mason-v2",
+-- },
+-- }
+return {}
 -- after adding/saving this file run :Lazy to potentially 're-install' the versions above

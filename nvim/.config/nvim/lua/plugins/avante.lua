@@ -56,7 +56,6 @@ return {
         model = "gpt-4.1",
         temperature = 0,
         max_tokens = 10000,
-        disable_tools = true,
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
