@@ -1,99 +1,80 @@
-local prefix = '<Leader>a'
 return {
-  {
-    'yetone/avante.nvim',
-    event = 'VeryLazy',
-    lazy = true,
-    version = false, -- set this if you want to always pull the latest change
-    opts = {
-      -- add any opts here
-      mappings = {
-        ask = prefix .. '<CR>',
-        edit = prefix .. 'e',
-        refresh = prefix .. 'r',
-        focus = prefix .. 'f',
-        toggle = {
-          default = prefix .. 't',
-          debug = prefix .. 'd',
-          hint = prefix .. 'h',
-          suggestion = prefix .. 's',
-          repomap = prefix .. 'R',
-        },
-        diff = {
-          next = ']c',
-          prev = '[c',
-        },
-        files = {
-          add_current = prefix .. '.',
+  'yetone/avante.nvim',
+  event = 'VeryLazy',
+  version = false, -- Never set this value to "*"! Never!
+  opts = {
+    provider = 'openai',
+    openai = {
+      endpoint = 'https://api.openai.com/v1',
+      model = 'gpt-4.1',
+      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      temperature = 0,
+      max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+      reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
+      disable_tools = false, -- disable tools!
+    },
+    gemini = {
+      model = 'gemini-2.5-flash',
+      temperature = 0,
+      max_tokens = 8192,
+      generationConfig = {
+        thinkingConfig = {
+          thinkingBudget = 1024,
         },
       },
-      behaviour = {
-        enable_claude_text_editor_tool_mode = false,
-        auto_suggestions = false,
-      },
-      rag_service = {
-        enabled = false, -- requires Docker or OrbStack
-      },
-      provider = 'openai',
-      gemini = {
-        model = 'gemini-2.0-flash',
-        temperature = 0,
-        max_tokens = 8192,
-      },
-      claude = {
-        endpoint = 'https://api.anthropic.com',
-        model = 'claude-3-7-sonnet-latest',
-        temperature = 0,
-        max_tokens = 10000,
-        disable_tools = { 'python' },
-        --thinking = {
-        --type = "enabled",
-        --budget_tokens = 2048,
-        --},
-      },
-      openai = {
-        endpoint = 'https://api.openai.com/v1',
-        model = 'gpt-4.1',
-        temperature = 0,
-        max_tokens = 10000,
+      disable_tools = false, -- disable tools!
+    },
+    claude = {
+      endpoint = 'https://api.anthropic.com',
+      model = 'claude-3-7-sonnet-latest',
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+      disable_tools = false, -- disable tools!
+    },
+    mappings = {
+      ask = '<leader>a<CR>', -- ask
+    },
+  },
+  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  build = 'make',
+  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+    'stevearc/dressing.nvim',
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
+    --- The below dependencies are optional,
+    'echasnovski/mini.pick', -- for file_selector provider mini.pick
+    'nvim-telescope/telescope.nvim', -- for file_selector provider telescope
+    'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
+    'ibhagwan/fzf-lua', -- for file_selector provider fzf
+    'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
+    'zbirenbaum/copilot.lua', -- for providers='copilot'
+    {
+      -- support for image pasting
+      'HakonHarnes/img-clip.nvim',
+      event = 'VeryLazy',
+      opts = {
+        -- recommended settings
+        default = {
+          embed_image_as_base64 = false,
+          prompt_for_file_name = false,
+          drag_and_drop = {
+            insert_mode = true,
+          },
+          -- required for Windows users
+          -- use_absolute_path = true,
+        },
       },
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    -- dynamically build it, taken from astronvim
-    build = vim.fn.has 'win32' == 1 and 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false' or 'make',
-    dependencies = {
-      -- "stevearc/dressing.nvim",
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      {
-        -- support for image pasting
-        'HakonHarnes/img-clip.nvim',
-        event = 'VeryLazy',
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
+    {
+      -- Make sure to set this up properly if you have lazy=true
+      'MeanderingProgrammer/render-markdown.nvim',
+      opts = {
+        file_types = { 'markdown', 'Avante' },
       },
-      {
-        -- Make sure to set this up properly if you have lazy=true
-        'MeanderingProgrammer/render-markdown.nvim',
-        dependencies = {
-          -- make sure rendering happens even without opening a markdown file first
-          'yetone/avante.nvim',
-        },
-        opts = function(_, opts)
-          opts.file_types = opts.file_types or { 'markdown', 'norg', 'rmd', 'org' }
-          vim.list_extend(opts.file_types, { 'Avante' })
-        end,
-      },
+      ft = { 'markdown', 'Avante' },
     },
   },
 }

@@ -54,3 +54,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader>bb', '<cmd>bprev<CR>', { noremap = true, desc = '[B]uffer [B]ack (Previous)' })
 vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { noremap = true, desc = '[B]uffer [N]ext' })
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { noremap = true, desc = '[B]uffer [D]elete' })
+
+-- Neo-Tree keymaps
+vim.keymap.set('n', '<leader>E', '<cmd>Neotree<CR>', { desc = '[E]xplorer' })
