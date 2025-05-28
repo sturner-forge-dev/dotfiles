@@ -57,3 +57,6 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { noremap = true, desc = '
 
 -- Neo-Tree keymaps
 vim.keymap.set('n', '<leader>E', '<cmd>Neotree<CR>', { desc = '[E]xplorer' })
+
+-- Git keymaps
+vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<CR>', { desc = '[G]it [B]lame' })
