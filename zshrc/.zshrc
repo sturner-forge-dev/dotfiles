@@ -76,8 +76,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-alias vim='nvim'
-alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
+alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
+alias lazy='nvim'
 alias c='clear'
 alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
