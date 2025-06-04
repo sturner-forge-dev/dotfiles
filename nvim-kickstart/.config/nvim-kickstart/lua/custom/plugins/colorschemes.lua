@@ -3,6 +3,7 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
+    enabled = true,
     config = function()
       require('catppuccin').setup {
         flavour = 'auto', -- latte, frappe, macchiato, mocha
@@ -54,6 +55,38 @@ return {
       }
       -- setup must be called before loading
       vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000, -- make sure to load this before all the other start plugins
+    enabled = false,
+    config = function()
+      require('onedark').setup {
+        style = 'dark',
+      }
+      -- Enable theme
+      require('onedark').load()
+    end,
+  },
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000, -- make sure to load this before all the other start plugins
+    enabled = false,
+    config = function()
+      require('kanagawa').setup {
+        compile = false, -- enable compiling the colorscheme
+        undercurl = true, -- enable undercurls
+        commentStyle = { italic = true },
+        functionStyle = { bold = true },
+        keywordStyle = { italic = true },
+        statementStyle = { bold = true },
+        typeStyle = { italic = true },
+        transparent = false, -- do not set background color
+        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+        terminalColors = true, -- set terminal colors (e.g. `g:terminal_color_0`)
+      }
+      vim.cmd.colorscheme 'kanagawa-dragon'
     end,
   },
 }
