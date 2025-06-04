@@ -14,7 +14,7 @@ return {
           next = '<M-i>',
           prev = '<M-o>',
           accept_word = '<C-i>',
-          accept_line = '<C-l>',
+          accept_line = '<C-f>',
           dismiss = '<C-e>',
         },
       },

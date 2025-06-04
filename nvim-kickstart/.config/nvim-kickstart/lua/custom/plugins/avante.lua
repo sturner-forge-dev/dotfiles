@@ -4,33 +4,41 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = 'openai',
-    openai = {
-      endpoint = 'https://api.openai.com/v1',
-      model = 'gpt-4.1',
-      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-      temperature = 0,
-      max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-      reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
-      disable_tools = false, -- disable tools!
-    },
-    gemini = {
-      model = 'gemini-2.5-flash',
-      temperature = 0,
-      max_tokens = 8192,
-      generationConfig = {
-        thinkingConfig = {
-          thinkingBudget = 1024,
+    providers = {
+      openai = {
+        endpoint = 'https://api.openai.com/v1',
+        model = 'gpt-4.1',
+        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        extra_request_body = {
+          reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
+          max_completion_tokens = 20000, -- Increase this to include reasoning tokens (for reasoning models)
+          temperature = 0,
         },
+        disable_tools = false, -- disable tools!
       },
-      disable_tools = false, -- disable tools!
-    },
-    claude = {
-      endpoint = 'https://api.anthropic.com',
-      model = 'claude-3-7-sonnet-latest',
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
-      max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-      disable_tools = false, -- disable tools!
+      gemini = {
+        model = 'gemini-2.5-flash',
+        generationConfig = {
+          thinkingConfig = {
+            thinkingBudget = 10000,
+          },
+        },
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 8192,
+        },
+        disable_tools = false, -- disable tools!
+      },
+      claude = {
+        endpoint = 'https://api.anthropic.com',
+        model = 'claude-3-7-sonnet-latest',
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0,
+          max_tokens = 10000, -- Increase this to include reasoning tokens (for reasoning models)
+        },
+        disable_tools = false, -- disable tools!
+      },
     },
     mappings = {
       ask = '<leader>a<CR>', -- ask

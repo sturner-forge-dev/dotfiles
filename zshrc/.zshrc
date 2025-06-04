@@ -44,9 +44,9 @@ fi
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   # Only start borders if it's not already running
-  if ! brew services list | grep borders | grep started > /dev/null; then
-    brew services start borders
-  fi
+  # if ! brew services list | grep borders | grep started > /dev/null; then
+    # brew services start borders
+  # fi
 fi
 
 # Keybindings

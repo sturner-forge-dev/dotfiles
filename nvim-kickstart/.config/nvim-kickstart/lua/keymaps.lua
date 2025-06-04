@@ -60,3 +60,33 @@ vim.keymap.set('n', '<leader>E', '<cmd>Neotree<CR>', { desc = '[E]xplorer' })
 
 -- Git keymaps
 vim.keymap.set('n', '<leader>gb', '<cmd>Git blame<CR>', { desc = '[G]it [B]lame' })
+
+-- Quicker keymaps
+vim.keymap.set('n', '<leader>ql', function()
+  require('quicker').toggle()
+end, {
+  desc = 'Toggle quickfix',
+})
+vim.keymap.set('n', '<leader>l', function()
+  require('quicker').toggle { loclist = true }
+end, {
+  desc = 'Toggle loclist',
+})
+require('quicker').setup {
+  keys = {
+    {
+      '>',
+      function()
+        require('quicker').expand { before = 2, after = 2, add_to_existing = true }
+      end,
+      desc = 'Expand quickfix context',
+    },
+    {
+      '<',
+      function()
+        require('quicker').collapse()
+      end,
+      desc = 'Collapse quickfix context',
+    },
+  },
+}
