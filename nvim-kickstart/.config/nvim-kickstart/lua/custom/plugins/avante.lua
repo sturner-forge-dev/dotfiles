@@ -7,7 +7,7 @@ return {
     providers = {
       openai = {
         endpoint = 'https://api.openai.com/v1',
-        model = 'gpt-4.1',
+        model = 'o3',
         timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
         extra_request_body = {
           reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
