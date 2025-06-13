@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = 'openai',
+    provider = 'claude',
     providers = {
       openai = {
         endpoint = 'https://api.openai.com/v1',
