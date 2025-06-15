@@ -78,14 +78,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 ## alias vim='nvim'
-alias vim='NVIM_APPNAME="nvim" nvim'
-alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 alias c='clear'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
 alias tks="tmux kill-session"
 alias ta="tmux attach"
 alias tls="tmux ls"
+alias vim="nvim"
 
 # Shell integrations
 eval "$(fzf --zsh)"
