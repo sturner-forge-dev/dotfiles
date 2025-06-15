@@ -31,6 +31,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Move around a little faster
 vim.keymap.set('n', '<M-j>', '10jzz', { desc = 'Move down 10 lines and center', noremap = true })
 vim.keymap.set('n', '<M-k>', '10kzz', { desc = 'Move up 10 lines and center', noremap = true })
 
