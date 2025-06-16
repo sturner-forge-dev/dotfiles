@@ -76,8 +76,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
-alias lazy='nvim'
 alias c='clear'
 alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
@@ -87,6 +85,7 @@ alias createbranch="~/AutoPay/scripts/create_branch.sh"
 alias tks="tmux kill-server"
 alias ta="tmux attach"
 alias tls="tmux ls"
+alias vim='nvim'
 
 # Shell integrations
 eval "$(fzf --zsh)"
