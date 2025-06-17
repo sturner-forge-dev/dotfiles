@@ -4,6 +4,7 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = 'claude',
+    mode = 'agentic', -- 'agentic' or 'legacy'
     providers = {
       openai = {
         endpoint = 'https://api.openai.com/v1',
@@ -39,6 +40,12 @@ return {
         },
         disable_tools = false, -- disable tools!
       },
+    },
+    behaviour = {
+      auto_suggestions = false,
+      auto_apply_diff_after_generation = false,
+      enable_token_counting = true,
+      auto_approve_tool_permissions = false,
     },
     mappings = {
       ask = '<leader>a<CR>', -- ask

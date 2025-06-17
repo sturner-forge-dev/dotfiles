@@ -7,7 +7,7 @@
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -45,6 +45,11 @@ vim.o.timeoutlen = 300
 -- Configure how new splits should be opened
 vim.o.splitright = true
 vim.o.splitbelow = true
+
+-- Tab behavior
+vim.o.smartindent = true -- Enable smart indentation for new lines
+vim.o.tabstop = 2 -- Number of spaces that a <Tab> counts for
+vim.o.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
