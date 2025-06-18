@@ -86,6 +86,7 @@ alias tks="tmux kill-server"
 alias ta="tmux attach"
 alias tls="tmux ls"
 alias vim='nvim'
+alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
 
 # Shell integrations
 eval "$(fzf --zsh)"

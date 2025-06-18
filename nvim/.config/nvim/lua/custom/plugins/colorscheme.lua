@@ -3,7 +3,7 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require('catppuccin').setup {
         flavour = 'auto', -- latte, frappe, macchiato, mocha
@@ -109,7 +109,7 @@ return {
 
       -- setup must be called before loading
       -- colorscheme options: nightfox, dayfox, dawnfox, duskfox, nordfox, terafox, carbonfox
-      vim.cmd 'colorscheme duskfox'
+      -- vim.cmd 'colorscheme duskfox'
     end,
   },
 }
