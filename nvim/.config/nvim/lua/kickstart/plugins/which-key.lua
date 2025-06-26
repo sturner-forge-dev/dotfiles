@@ -63,6 +63,7 @@ return {
         { '<leader>t', group = '[T]oggle' },
         { '<leader>a', group = '[A]vante' },
         { '<leader>b', group = '[B]uffers' },
+        { '<leader>c', group = '[C]ode' },
         { '<leader>g', group = '[G]it Fugtive' },
         { '<leader>h', group = '[H]unks' },
       },
