@@ -87,6 +87,7 @@ alias ta="tmux attach"
 alias tls="tmux ls"
 alias vim='nvim'
 alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
+alias ff='vim "$(fzf)"'
 
 # Shell integrations
 eval "$(fzf --zsh)"

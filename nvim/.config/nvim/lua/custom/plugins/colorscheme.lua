@@ -50,7 +50,18 @@ return {
             enabled = true,
             indentscope_color = '',
           },
-          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+          harpoon = true,
+          telescope = {
+            enabled = true,
+          },
+          which_key = true,
+          mason = true,
+          neotree = true,
+          require('lualine').setup {
+            options = {
+              theme = 'catppuccin',
+            },
+          },
         },
       }
       -- setup must be called before loading

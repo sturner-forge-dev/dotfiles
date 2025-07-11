@@ -7,38 +7,29 @@ return {
 
     -- REQUIRED
     harpoon:setup()
-    -- REQUIRED
 
-    vim.keymap.set('n', '<leader>A', function()
+    vim.keymap.set('n', '<leader>p', function()
       harpoon:list():add()
-    end, { desc = '[A]dd current buffer to Harpoon list' })
+    end, { desc = '[P]in current buffer to Harpoon list' })
 
     vim.keymap.set('n', '<C-e>', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end, { desc = 'Op[e]n Harpoon' })
+    end, { desc = 'Op[e]n Harpoon List' })
 
-    vim.keymap.set('n', '<C-a>', function()
+    vim.keymap.set('n', '<F1>', function()
       harpoon:list():select(1)
     end, { desc = 'Harpoon to Buffer 1' })
 
-    vim.keymap.set('n', '<C-s>', function()
+    vim.keymap.set('n', '<F2>', function()
       harpoon:list():select(2)
     end, { desc = 'Harpoon to Buffer 2', noremap = true })
 
-    vim.keymap.set('n', '<C-d>', function()
+    vim.keymap.set('n', '<F3>', function()
       harpoon:list():select(3)
     end, { desc = 'Harpoon to Buffer 3' })
 
-    vim.keymap.set('n', '<C-f>', function()
+    vim.keymap.set('n', '<F4>', function()
       harpoon:list():select(4)
     end, { desc = 'Harpoon to Buffer 4', noremap = true })
-
-    -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<C-S-P>', function()
-      harpoon:list():prev()
-    end, { desc = 'Toggle [P]revious Harpoon buffer' })
-    vim.keymap.set('n', '<C-S-N>', function()
-      harpoon:list():next()
-    end, { desc = 'Toggle [N]ext Harpoon buffer' })
   end,
 }
