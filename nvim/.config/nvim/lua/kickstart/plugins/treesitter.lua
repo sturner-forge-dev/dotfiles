@@ -20,6 +20,7 @@ return {
         'typescript',
         'javascript',
         'tsx',
+        'go',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

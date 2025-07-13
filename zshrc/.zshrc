@@ -1,7 +1,7 @@
 # Homebrew setup
-if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  # eval "$(/opt/homebrew/bin/brew shellenv)"
+# fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
@@ -42,13 +42,13 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 # Homebrew setup
-if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+# if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  # eval "$(/opt/homebrew/bin/brew shellenv)"
   # Only start borders if it's not already running
-  if ! brew services list | grep borders | grep started > /dev/null; then
-    brew services start borders
-  fi
-fi
+  # if ! brew services list | grep borders | grep started > /dev/null; then
+    # brew services start borders
+  # fi
+# fi
 
 # Keybindings
 bindkey -e
