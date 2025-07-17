@@ -85,9 +85,10 @@ alias createbranch="~/AutoPay/scripts/create_branch.sh"
 alias tks="tmux kill-server"
 alias ta="tmux attach"
 alias tls="tmux ls"
-alias vim='nvim'
+alias v='nvim'
 alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
-alias ff='vim "$(fzf)"'
+alias fo='vim "$(fzf)"'
+alias ff='cd "$(find . -type d | fzf)"'
 
 # Shell integrations
 eval "$(fzf --zsh)"
