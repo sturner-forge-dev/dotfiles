@@ -88,7 +88,8 @@ alias tls="tmux ls"
 alias v='nvim'
 alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
 alias fo='vim "$(fzf)"'
-alias ff='cd "$(find . -type d | fzf)"'
+alias ff='cd "$(fd . -t d | fzf)"'
+alias ai='cursor'
 
 # Shell integrations
 eval "$(fzf --zsh)"
