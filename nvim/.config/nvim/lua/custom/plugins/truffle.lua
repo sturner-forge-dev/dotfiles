@@ -15,10 +15,10 @@ return {
       start_insert = true, -- start in terminal insert mode
       create_mappings = true, -- install default keymaps
       mappings = {
-        toggle = '<leader>tc',
-        send_selection = '<leader>ts',
-        send_file = '<leader>tf',
-        send_input = '<leader>ti',
+        toggle = '<leader>ag',
+        send_selection = '<leader>ats',
+        send_file = '<leader>atf',
+        send_input = '<leader>ati',
       },
     }
   end,

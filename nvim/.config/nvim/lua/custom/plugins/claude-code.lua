@@ -7,7 +7,7 @@ return {
     require('claude-code').setup {
       keymaps = {
         toggle = {
-          normal = '<leader>cc',
+          normal = '<leader>ac',
         },
       },
     }
