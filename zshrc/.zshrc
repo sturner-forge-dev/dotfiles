@@ -80,8 +80,9 @@ alias c='clear'
 alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
-alias createcommit="~/AutoPay/scripts/create_commit.sh"
-alias createbranch="~/AutoPay/scripts/create_branch.sh"
+alias cc="~/AutoPay/scripts/create_commit.sh"
+alias cb="~/AutoPay/scripts/create_branch.sh"
+alias cr="~/AutoPay/scripts/create_release.sh"
 alias tks="tmux kill-server"
 alias ta="tmux attach"
 alias tls="tmux ls"
@@ -111,3 +112,4 @@ function y() {
 # Setting UTF-8 terminal support
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
