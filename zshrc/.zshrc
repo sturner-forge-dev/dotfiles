@@ -84,7 +84,7 @@ alias python=/usr/bin/python3
 alias tks="tmux kill-session"
 alias ta="tmux attach"
 alias tls="tmux ls"
-alias vim="nvim"
+alias v="nvim"
 
 # Shell integrations
 eval "$(fzf --zsh)"

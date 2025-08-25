@@ -21,6 +21,9 @@ return {
         'javascript',
         'tsx',
         'go',
+        'php',
+        'sql',
+        'blade',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

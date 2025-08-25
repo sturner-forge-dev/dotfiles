@@ -10,6 +10,11 @@ return {
           normal = '<leader>cc',
         },
       },
+      window = {
+        split_ratio = 0.3,
+        position = 'vertical',
+        hide_numbers = false,
+      },
     }
   end,
 }

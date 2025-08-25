@@ -38,7 +38,7 @@ vim.keymap.set('n', '<M-k>', '10kzz', { desc = 'Move up 10 lines and center', no
 -- Easier buffer navigation
 vim.keymap.set('n', '<leader>bb', '<cmd>bprev<CR>', { noremap = true, desc = '[B]uffer [B]ack (Previous)' })
 vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { noremap = true, desc = '[B]uffer [N]ext' })
-vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { noremap = true, desc = '[B]uffer [D]elete' })
+vim.keymap.set('n', '<F5>', '<cmd>bdelete<CR>', { noremap = true, desc = '[B]uffer [D]elete' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
