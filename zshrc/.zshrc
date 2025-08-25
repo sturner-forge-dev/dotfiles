@@ -91,6 +91,7 @@ alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
 alias fo='vim "$(fzf)"'
 alias ff='cd "$(fd . -t d | fzf)"'
 alias ai='cursor'
+alias cai='cursor-agent'
 
 # Shell integrations
 eval "$(fzf --zsh)"
