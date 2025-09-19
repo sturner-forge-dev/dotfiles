@@ -5,6 +5,9 @@ return {
   },
   config = function()
     require('claude-code').setup {
+      window = {
+        position = 'vertical',
+      },
       keymaps = {
         toggle = {
           normal = '<leader>ac',

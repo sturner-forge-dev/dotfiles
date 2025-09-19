@@ -20,7 +20,7 @@ return {
       start_insert = true, -- start in terminal insert mode
       create_mappings = true, -- install default keymaps
       mappings = {
-        toggle = '<leader>ag',
+        toggle = '<leader>att',
         send_selection = '<leader>ats',
         send_file = '<leader>atf',
       },

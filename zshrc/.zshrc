@@ -50,9 +50,10 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 fi
 
 # Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey -v
+bindkey '^u' history-search-backward
+bindkey '^f' history-search-forward
+bindkey '^p' autosuggest-accept
 
 # History
 HISTSIZE=5000
@@ -114,3 +115,7 @@ function y() {
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

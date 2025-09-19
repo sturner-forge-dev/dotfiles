@@ -3,13 +3,13 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
       require('catppuccin').setup {
         flavour = 'auto', -- latte, frappe, macchiato, mocha
         background = { -- :h background
           light = 'latte',
-          dark = 'mocha',
+          dark = 'macchiato',
         },
         transparent_background = false, -- disables setting the background color.
         show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -54,6 +54,7 @@ return {
           telescope = {
             enabled = true,
           },
+          fzf = true,
           which_key = true,
           mason = true,
           neotree = true,
@@ -66,6 +67,26 @@ return {
       }
       -- setup must be called before loading
       vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+  {
+    -- lua/plugins/rose-pine.lua
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    enabled = true,
+    priority = 1000,
+    config = function()
+      require('rose-pine').setup {
+        variant = 'moon',
+      }
+      -- Integrations
+      require('lualine').setup {
+        options = {
+          theme = 'rose-pine',
+        },
+      }
+
+      vim.cmd 'colorscheme rose-pine'
     end,
   },
 }
