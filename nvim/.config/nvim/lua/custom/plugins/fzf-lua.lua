@@ -17,6 +17,8 @@ return {
       vim.keymap.set('n', '<leader>B', function()
         require('fzf-lua').buffers()
       end, { desc = 'Find open buffers' })
+
+      require('fzf-lua').register_ui_select()
     end,
   },
 }
