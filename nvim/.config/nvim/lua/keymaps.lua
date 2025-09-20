@@ -60,4 +60,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+local function insertFullPath()
+  local filepath = vim.fn.expand '%:.'
+  vim.fn.setreg('+', filepath) -- write to clippoard
+end
+
+vim.keymap.set('n', '<leader>pc', insertFullPath, { noremap = true, silent = true })
 -- vim: ts=2 sts=2 sw=2 et
