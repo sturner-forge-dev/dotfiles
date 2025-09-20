@@ -1,7 +1,7 @@
 # Homebrew setup
-# if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  # eval "$(/opt/homebrew/bin/brew shellenv)"
-# fi
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
@@ -20,7 +20,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-zinit light pjvds/zsh-cwd
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -42,18 +41,19 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 # Homebrew setup
-# if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  # eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ -f "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   # Only start borders if it's not already running
   # if ! brew services list | grep borders | grep started > /dev/null; then
     # brew services start borders
   # fi
-# fi
+fi
 
 # Keybindings
-bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+bindkey -v
+bindkey '^u' history-search-backward
+bindkey '^f' history-search-forward
+bindkey '^p' autosuggest-accept
 
 # History
 HISTSIZE=5000
@@ -77,14 +77,18 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-## alias vim='nvim'
 alias c='clear'
+alias gs='gst'
 alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
-alias tks="tmux kill-session"
+alias tks="tmux kill-server"
 alias ta="tmux attach"
 alias tls="tmux ls"
-alias v="nvim"
+alias v='nvim'
+alias fo='vim "$(fzf)"'
+alias ff='cd "$(fd . -t d | fzf)"'
+alias ai='cursor'
+alias cai='cursor-agent'
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -101,11 +105,13 @@ function y() {
 }
 
 # Source secrets
-[[ -f ~/dotfiles/.secrets ]] && source ~/dotfiles/.secrets
+[[ -f ~/.secrets ]] && source ~/.secrets
 
 # Setting UTF-8 terminal support
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
 
-# bun completions
-[ -s "/Users/steventurner/.bun/_bun" ] && source "/Users/steventurner/.bun/_bun"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
