@@ -16,7 +16,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Add ZSH plugins
-zinit light zsh-users/zsh-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
