@@ -2,11 +2,11 @@ return {
   'tpope/vim-fugitive',
   keys = {
     {
-      '<leader>gi',
+      '<leader>G',
       ':Git<CR>',
       noremap = true,
       silent = true,
-      desc = 'Git Fugitive: Open [G]it [I]nterface',
+      desc = 'Git Fugitive: Open [G]it Interface',
     },
   },
 }

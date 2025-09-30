@@ -3,7 +3,7 @@ return {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    enabled = false,
+    enabled = true,
     config = function()
       require('catppuccin').setup {
         flavour = 'auto', -- latte, frappe, macchiato, mocha
@@ -73,7 +73,7 @@ return {
     -- lua/plugins/rose-pine.lua
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = true,
+    enabled = false,
     priority = 1000,
     config = function()
       require('rose-pine').setup {

@@ -10,13 +10,13 @@ return {
         require('fzf-lua').files()
       end, { desc = 'Find files in current working directory' })
 
-      vim.keymap.set('n', '<leader>G', function()
+      vim.keymap.set('n', '<leader>s', function()
         require('fzf-lua').live_grep()
       end, { desc = 'Live grep in current working directory' })
 
-      vim.keymap.set('n', '<leader>B', function()
+      vim.keymap.set('n', '<leader>bl', function()
         require('fzf-lua').buffers()
-      end, { desc = 'Find open buffers' })
+      end, { desc = '[b]uffer [l]ist' })
 
       require('fzf-lua').register_ui_select()
     end,
