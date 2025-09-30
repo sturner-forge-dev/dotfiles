@@ -2,7 +2,38 @@ return {
   'folke/sidekick.nvim',
   opts = {
     -- add any options here
-    cli = {},
+    cli = {
+      win = {
+        wo = {}, ---@type vim.wo
+        bo = {}, ---@type vim.bo
+        width = 100,
+        height = 20,
+        layout = 'vertical', ---@type "vertical" | "horizontal"
+        position = 'right', ---@type "left"|"bottom"|"top"|"right"
+        --- CLI Tool Keymaps
+        --- default mode is `t`
+        ---@type table<string, sidekick.cli.Keymap|false>
+        keys = {
+          stopinsert = { '<esc><esc>', 'stopinsert', mode = 't' }, -- enter normal mode
+          hide_n = { 'q', 'hide', mode = 'n' }, -- hide from normal mode
+          hide_t = { '<c-q>', 'hide' }, -- hide from terminal mode
+          win_p = { '<c-w>p', 'blur' }, -- leave the cli window
+          blur = { '<c-o>', 'blur' }, -- leave the cli window
+          prompt = { '<c-p>', 'prompt' }, -- insert prompt or context
+          -- example of custom keymap:
+          -- say_hi = {
+          --   "<c-h>",
+          --   function(t)
+          --     t:send("hi!")
+          --   end,
+          -- },
+        },
+      },
+      -- mux = {
+      --   backend = 'tmux',
+      --   enabled = true,
+      -- },
+    },
   },
   keys = {
     {
