@@ -4,6 +4,7 @@ return {
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
+
       -- Snippet Engine
       {
         'L3MON4D3/LuaSnip',
@@ -31,6 +32,7 @@ return {
         opts = {},
       },
       'folke/lazydev.nvim',
+      'fang2hou/blink-copilot',
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
@@ -57,12 +59,20 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        -- preset = 'default',
+        preset = 'super-tab',
         ['<Tab>'] = {
-          'snippet_forward',
-          function() -- sidekick next edit suggestion
-            return require('sidekick').nes_jump_or_apply()
+          function(cmp)
+            if vim.b[vim.api.nvim_get_current_buf()].nes_state then
+              cmp.hide()
+              return (require('copilot-lsp.nes').apply_pending_nes() and require('copilot-lsp.nes').walk_cursor_end_edit())
+            end
+            if cmp.snippet_active() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
           end,
+          'snippet_forward',
           'fallback',
         },
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
@@ -82,13 +92,20 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
+        default = { 'copilot', 'lsp', 'buffer', 'path' },
         providers = {
-          lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+          },
+          lazydev = { module = 'lazydev.integrations.blink', score_offset = 90 },
+          lsp = { score_offset = 80 },
+          buffer = { score_offset = 70 },
+          path = { score_offset = 60 },
         },
       },
-
-      snippets = { preset = 'luasnip' },
 
       -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
       -- which automatically downloads a prebuilt binary when enabled.
