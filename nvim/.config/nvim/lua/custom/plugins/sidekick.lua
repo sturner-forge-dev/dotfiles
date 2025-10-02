@@ -29,24 +29,24 @@ return {
           -- },
         },
       },
-      -- mux = {
-      --   backend = 'tmux',
-      --   enabled = true,
-      -- },
+      mux = {
+        backend = 'tmux',
+        enabled = true,
+      },
     },
   },
   keys = {
-    {
-      '<tab>',
-      function()
-        -- if there is a next edit, jump to it, otherwise apply it if any
-        if not require('sidekick').nes_jump_or_apply() then
-          return '<Tab>' -- fallback to normal tab
-        end
-      end,
-      expr = true,
-      desc = 'Goto/Apply Next Edit Suggestion',
-    },
+    -- {
+    --   '<tab>',
+    --   function()
+    --     -- if there is a next edit, jump to it, otherwise apply it if any
+    --     if not require('sidekick').nes_jump_or_apply() then
+    --       return '<Tab>' -- fallback to normal tab
+    --     end
+    --   end,
+    --   expr = true,
+    --   desc = 'Goto/Apply Next Edit Suggestion',
+    -- },
     {
       '<c-.>',
       function()
@@ -106,7 +106,7 @@ return {
     {
       '<leader>ap',
       function()
-        require('sidekick.cli').select_prompt()
+        require('sidekick.cli').prompt()
       end,
       desc = 'Sidekick Ask Prompt',
       mode = { 'n', 'v' },

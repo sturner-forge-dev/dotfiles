@@ -58,11 +58,6 @@ return {
           which_key = true,
           mason = true,
           neotree = true,
-          require('lualine').setup {
-            options = {
-              theme = 'catppuccin',
-            },
-          },
         },
       }
       -- setup must be called before loading
@@ -78,12 +73,6 @@ return {
     config = function()
       require('rose-pine').setup {
         variant = 'moon',
-      }
-      -- Integrations
-      require('lualine').setup {
-        options = {
-          theme = 'rose-pine',
-        },
       }
 
       vim.cmd 'colorscheme rose-pine'
