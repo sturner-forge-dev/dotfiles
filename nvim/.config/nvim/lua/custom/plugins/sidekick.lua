@@ -6,8 +6,10 @@ return {
       win = {
         wo = {}, ---@type vim.wo
         bo = {}, ---@type vim.bo
-        width = 100,
-        height = 20,
+        split = {
+          width = 120,
+          height = 20,
+        },
         layout = 'vertical', ---@type "vertical" | "horizontal"
         position = 'right', ---@type "left"|"bottom"|"top"|"right"
         --- CLI Tool Keymaps
@@ -31,7 +33,7 @@ return {
       },
       mux = {
         backend = 'tmux',
-        enabled = true,
+        enabled = false,
       },
     },
   },

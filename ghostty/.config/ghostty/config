@@ -4,8 +4,9 @@ auto-update-channel = tip
 
 # defaults
 theme = Catppuccin Mocha
-font-size = 13
-font-family = JetBrainsMono NFM Regular
+font-size = 15
+font-family = Iosevka Term
+font-style = Bold
 fullscreen = true
 minimum-contrast = 0.8
 adjust-underline-thickness = -20%
