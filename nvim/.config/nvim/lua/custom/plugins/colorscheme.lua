@@ -78,4 +78,14 @@ return {
       vim.cmd 'colorscheme rose-pine'
     end,
   },
+  {
+    'thesimonho/kanagawa-paper.nvim',
+    lazy = false,
+    priority = 1000,
+    enabled = fales,
+    init = function()
+      vim.cmd.colorscheme 'kanagawa-paper-ink'
+    end,
+    opts = {},
+  },
 }

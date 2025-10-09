@@ -54,20 +54,20 @@ return {
         -- visual mode
         map('v', '<leader>gs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'git [s]tage hunk' })
+        end, { desc = '[s]tage hunk' })
         map('v', '<leader>gr', function()
           gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end, { desc = 'git [r]eset hunk' })
+        end, { desc = '[r]eset hunk' })
         -- normal mode
-        map('n', '<leader>gs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
-        map('n', '<leader>gr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
-        map('n', '<leader>gS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
-        map('n', '<leader>gu', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
-        map('n', '<leader>gR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
-        map('n', '<leader>gp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
-        map('n', '<leader>gl', gitsigns.blame_line, { desc = 'git blame [l]ine' })
-        map('n', '<leader>gb', gitsigns.blame, { desc = 'git [b]lame file' })
-        map('n', '<leader>gd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+        map('n', '<leader>gs', gitsigns.stage_hunk, { desc = '[s]tage hunk' })
+        map('n', '<leader>gr', gitsigns.reset_hunk, { desc = '[r]eset hunk' })
+        map('n', '<leader>gS', gitsigns.stage_buffer, { desc = '[S]tage buffer' })
+        map('n', '<leader>gu', gitsigns.stage_hunk, { desc = '[u]ndo stage hunk' })
+        map('n', '<leader>gR', gitsigns.reset_buffer, { desc = '[R]eset buffer' })
+        map('n', '<leader>gp', gitsigns.preview_hunk, { desc = '[p]review hunk' })
+        map('n', '<leader>gl', gitsigns.blame_line, { desc = 'blame [l]ine' })
+        map('n', '<leader>gb', gitsigns.blame, { desc = '[b]lame file' })
+        map('n', '<leader>gd', gitsigns.diffthis, { desc = '[d]iff against index' })
         map('n', '<leader>gD', function()
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })

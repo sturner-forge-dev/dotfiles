@@ -94,6 +94,12 @@ alias ff='cd "$(fd . -t d | fzf)"'
 alias ai='cursor'
 alias cai='cursor-agent'
 
+# Agent aliases
+alias cursor-update='cursor-agent update'
+alias gemini-update='brew upgrade gemini-cli'
+alias codex-update='brew upgrade codex'
+alias claude-update='claude update'
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"

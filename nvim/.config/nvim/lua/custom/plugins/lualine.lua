@@ -1,6 +1,9 @@
 return {
   'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+    'bwpge/lualine-pretty-path',
+  },
   opts = function(_, opts)
     -- Set default options if not provided
     opts.options = opts.options or {}
@@ -11,7 +14,7 @@ return {
       opts.sections = {}
     end
     if not opts.sections.lualine_c then
-      opts.sections.lualine_c = {}
+      opts.sections.lualine_c = { 'pretty_path' }
     end
 
     table.insert(opts.sections.lualine_c, {
