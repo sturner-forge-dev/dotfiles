@@ -68,6 +68,7 @@ return {
         { '<leader>g', group = '[G]it' },
         { '<leader>gt', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unks' },
+        { '<leader>q', group = '[Q]uickfix' },
       },
     },
   },
