@@ -1,9 +1,11 @@
 return {
   {
     'zbirenbaum/copilot.lua',
+    requires = { 'copilotlsp-nvim/copilotlsp' },
     cmd = 'Copilot',
     build = ':Copilot auth',
     event = 'BufReadPost',
+    enabled = true,
     opts = {
       -- nes = {
       --   enabled = true,
@@ -14,9 +16,10 @@ return {
       --   },
       -- },
       suggestion = {
-        enabled = not vim.g.ai_cmp,
+        enabled = true,
         auto_trigger = true,
-        hide_during_completion = vim.g.ai_cmp,
+        hide_during_completion = true,
+        trigger_on_accept = true,
         keymap = {
           accept = '<Tab>',
           next = '<M-i>',

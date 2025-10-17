@@ -10,7 +10,6 @@ return {
           width = 120,
           height = 20,
         },
-        layout = 'vertical', ---@type "vertical" | "horizontal"
         position = 'right', ---@type "left"|"bottom"|"top"|"right"
         --- CLI Tool Keymaps
         --- default mode is `t`
@@ -42,10 +41,12 @@ return {
       '<tab>',
       function()
         -- if there is a next edit, jump to it, otherwise apply it if any
-        if not require('sidekick').nes_jump_or_apply() then
-          return '<Tab>' -- fallback to normal tab
+        if require('sidekick').nes_jump_or_apply() then
+          return -- jumped or applied
         end
+        return '<tab>'
       end,
+      mode = { 'i', 'n' },
       expr = true,
       desc = 'Goto/Apply Next Edit Suggestion',
     },
@@ -104,6 +105,21 @@ return {
       end,
       desc = 'Sidekick Copilot Toggle',
       mode = { 'n', 'v' },
+    },
+    {
+      '<leader>af',
+      function()
+        require('sidekick.cli').send { msg = '{file}' }
+      end,
+      desc = 'Send File',
+    },
+    {
+      '<leader>av',
+      function()
+        require('sidekick.cli').send { msg = '{selection}' }
+      end,
+      mode = { 'x' },
+      desc = 'Send Visual Selection',
     },
     {
       '<leader>ap',

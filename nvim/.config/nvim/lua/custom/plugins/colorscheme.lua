@@ -82,7 +82,7 @@ return {
     'thesimonho/kanagawa-paper.nvim',
     lazy = false,
     priority = 1000,
-    enabled = fales,
+    enabled = false,
     init = function()
       vim.cmd.colorscheme 'kanagawa-paper-ink'
     end,
