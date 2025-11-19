@@ -3,6 +3,9 @@ return {
   opts = {
     -- add any options here
     cli = {
+      nes = {
+        enabled = false,
+      },
       win = {
         wo = {}, ---@type vim.wo
         bo = {}, ---@type vim.bo
