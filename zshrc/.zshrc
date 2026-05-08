@@ -92,7 +92,7 @@ alias gcm="git commit -m"
 
 # Tmux
 alias tks="tmux kill-server"
-alias t="tmux attach"
+alias t="tmux attach || tmux new -s LOSUI"
 alias tls="tmux ls"
 
 # Dev
