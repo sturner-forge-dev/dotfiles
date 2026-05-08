@@ -88,6 +88,7 @@ alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias cc="~/AutoPay/scripts/create_commit.sh"
 alias cb="~/AutoPay/scripts/create_branch.sh"
 alias cr="~/AutoPay/scripts/create_release.sh"
+alias gcm="git commit -m"
 
 # Tmux
 alias tks="tmux kill-server"
