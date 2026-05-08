@@ -20,6 +20,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit light z-shell/zsh-eza
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
@@ -40,15 +41,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/dotfiles/ohmyposh/.config/ohmyposh/zen.toml)"
 fi
 
-# Homebrew setup
-if [[ -f "/opt/homebrew/bin/brew" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  # Only start borders if it's not already running
-  # if ! brew services list | grep borders | grep started > /dev/null; then
-    # brew services start borders
-  # fi
-fi
-
 # Keybindings
 bindkey -v
 bindkey '^u' history-search-backward
@@ -57,7 +49,7 @@ bindkey '^p' autosuggest-accept
 
 # History
 HISTSIZE=5000
-HISTOFILE=~/.zsh_history
+HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 setopt appendhistory
@@ -65,7 +57,6 @@ setopt sharehistory
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
-setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Completion styling
@@ -76,25 +67,42 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias c='clear'
-alias gs='gst'
-alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias python=/usr/bin/python3
+
+# File System
+if command -v eza &> /dev/null; then
+  alias ls='eza -lh --group-directories-first --icons=auto'
+  alias lsa='ls -a'
+  alias lt='eza --tree --level=2 --long --icons --git'
+  alias lta='lt -a'
+fi
+
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Git
+alias gpod="echo '... Pulling from develop branch...' && git pull origin develop"
+alias gitup="echo '... FETCHING && PULLING ...' && git fetch && git pull"
 alias cc="~/AutoPay/scripts/create_commit.sh"
 alias cb="~/AutoPay/scripts/create_branch.sh"
 alias cr="~/AutoPay/scripts/create_release.sh"
+
+# Tmux
 alias tks="tmux kill-server"
-alias ta="tmux attach"
+alias t="tmux attach"
 alias tls="tmux ls"
+
+# Dev
 alias v='nvim'
-alias testall="echo 'Running all tests and lint' && yarn lint && yarn test"
+alias testall="echo 'Linting and running all tests' && yarn lint --fix && yarn test"
 alias fo='vim "$(fzf)"'
 alias ff='cd "$(fd . -t d | fzf)"'
+
+# Agent
 alias ai='cursor'
 alias cai='cursor-agent'
-
-# Agent aliases
 alias cursor-update='cursor-agent update'
 alias gemini-update='brew upgrade gemini-cli'
 alias codex-update='brew upgrade codex'
@@ -123,7 +131,15 @@ LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Lazy-load nvm: defer sourcing until first use of nvm/node/npm/npx
+_load_nvm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm()  { _load_nvm; nvm "$@"; }
+node() { _load_nvm; node "$@"; }
+npm()  { _load_nvm; npm "$@"; }
+npx()  { _load_nvm; npx "$@"; }
 
 export NODE_OPTIONS="--max-old-space-size=8192"
