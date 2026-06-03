@@ -6,6 +6,8 @@ fi
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
 
+export NODE_OPTIONS="--max-old-space-size=8192"
+
 # Download Zinit if it's not already installed
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
@@ -102,16 +104,9 @@ alias fo='vim "$(fzf)"'
 alias ff='cd "$(fd . -t d | fzf)"'
 
 # Agent
-alias ai='cursor'
-alias cai='cursor-agent'
-alias cursor-update='cursor-agent update'
-alias gemini-update='brew upgrade gemini-cli'
-alias codex-update='brew upgrade codex'
+alias c='claude'
+alias cx='claude --dangerously-accept-permissions'
 alias claude-update='claude update'
-
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 
 # Yazi setup
 function y() {
@@ -143,4 +138,6 @@ node() { _load_nvm; node "$@"; }
 npm()  { _load_nvm; npm "$@"; }
 npx()  { _load_nvm; npx "$@"; }
 
-export NODE_OPTIONS="--max-old-space-size=8192"
+# Shell integrations
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
