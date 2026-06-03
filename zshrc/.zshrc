@@ -105,7 +105,7 @@ alias ff='cd "$(fd . -t d | fzf)"'
 
 # Agent
 alias c='claude'
-alias cx='claude --dangerously-accept-permissions'
+alias cx='claude --dangerously-skip-permissions'
 alias claude-update='claude update'
 
 # Yazi setup
@@ -127,16 +127,22 @@ LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-# Lazy-load nvm: defer sourcing until first use of nvm/node/npm/npx
-_load_nvm() {
-  unset -f nvm node npm npx
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-}
-nvm()  { _load_nvm; nvm "$@"; }
-node() { _load_nvm; node "$@"; }
-npm()  { _load_nvm; npm "$@"; }
-npx()  { _load_nvm; npx "$@"; }
+
+# Lazy-load nvm: defer sourcing until first use of nvm/node/npm/npx.
+# Only install the wrappers if nvm is actually present; otherwise leave
+# node/npm/npx to resolve via PATH (e.g. Homebrew) instead of stranding
+# them in undefined wrapper functions that recurse on themselves.
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  _load_nvm() {
+    unset -f nvm node npm npx _load_nvm
+    \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+  }
+  nvm()  { _load_nvm; command nvm "$@"; }
+  node() { _load_nvm; command node "$@"; }
+  npm()  { _load_nvm; command npm "$@"; }
+  npx()  { _load_nvm; command npx "$@"; }
+fi
 
 # Shell integrations
 eval "$(fzf --zsh)"
