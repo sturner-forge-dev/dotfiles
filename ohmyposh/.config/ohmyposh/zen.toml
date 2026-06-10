@@ -27,7 +27,7 @@ final_space = true
     style = 'plain'
     background = 'transparent'
     foreground = 'blue'
-    template = '{{ .Path }}'
+    template = ' {{ .Path }}'
 
     [blocks.segments.properties]
       style = 'full'
@@ -69,7 +69,7 @@ final_space = true
       "{{if eq .Code 0}}magenta{{end}}",
     ]
     background = 'transparent'
-    template = '⟩ '
+    template = ' ⟩ '
 
 [[tooltips]]
   leading_diamond = ''
@@ -100,5 +100,5 @@ final_space = true
 [secondary_prompt]
   forgeground = 'magenta'
   background = 'transparent'
-  template = '⟩⟩ '
+  template = ' ⟩⟩ '
   
