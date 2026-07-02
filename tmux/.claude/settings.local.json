@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(tmux show-options *)",
-      "Bash(tmux show-window-options *)"
+      "Bash(tmux show-window-options *)",
+      "Bash(awk --version)",
+      "Bash(command -v gawk)",
+      "Bash(gawk --version)",
+      "Bash(awk '{ if \\(match\\($0, /-t \\([0-9]+\\)/, target\\)\\) print \"matched:\", target[1] }')"
     ]
   }
 }
