@@ -3,16 +3,21 @@ auto-update = check
 auto-update-channel = tip
 
 # defaults
-theme = Catppuccin Mocha
-font-size = 15
-font-family = Hack
-fullscreen = true
-minimum-contrast = 0.8
-adjust-underline-thickness = -20%
-window-padding-x = 2
-window-inherit-working-directory = true
-mouse-hide-while-typing = true
 working-directory = /Users/steventurner/AutoPay/los-ui
 fullscreen  = true
+mouse-hide-while-typing = true
 
+# theme
+theme = Catppuccin Mocha
 
+# font
+font-size = 15
+font-family = Hack
+
+# window
+window-padding-x = 2
+window-inherit-working-directory = true
+
+# misc
+minimum-contrast = 0.8
+adjust-underline-thickness = -20%
