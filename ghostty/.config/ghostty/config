@@ -11,12 +11,13 @@ mouse-hide-while-typing = true
 theme = Catppuccin Mocha
 
 # font
-font-size = 15
-font-family = Hack
+font-size = 15.5
+font-family = JetBrainsMono NFM Regular
 
 # window
 window-padding-x = 2
 window-inherit-working-directory = true
+adjust-cell-height = 12%
 
 # misc
 minimum-contrast = 0.8
