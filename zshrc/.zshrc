@@ -98,6 +98,9 @@ alias tks="tmux kill-server"
 alias t="tmux attach || tmux new -s LOSUI"
 alias tls="tmux ls"
 
+# Herdr
+alias h="herdr"
+
 # Dev
 alias v='nvim'
 alias testall="echo 'Linting and running all tests' && yarn lint --fix && yarn test"
