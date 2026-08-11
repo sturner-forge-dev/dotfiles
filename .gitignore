@@ -1,1 +1,5 @@
 .secrets
+
+# herdr runtime state — logs, session scrollback, lockfile
+herdr/.config/herdr/*
+!herdr/.config/herdr/config.toml
