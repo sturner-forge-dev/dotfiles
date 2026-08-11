@@ -22,3 +22,7 @@ adjust-cell-height = 12%
 # misc
 minimum-contrast = 0.8
 adjust-underline-thickness = -20%
+
+# keybinds
+keybind = alt+arrow_left=unbind
+keybind = alt+arrow_right=unbind

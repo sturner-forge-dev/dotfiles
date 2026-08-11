@@ -103,6 +103,7 @@ alias h="herdr"
 
 # Dev
 alias v='nvim'
+alias vim='nvim'
 alias testall="echo 'Linting and running all tests' && yarn lint --fix && yarn test"
 alias fo='vim "$(fzf)"'
 alias ff='cd "$(fd . -t d | fzf)"'
