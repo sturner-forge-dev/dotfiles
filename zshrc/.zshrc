@@ -92,6 +92,7 @@ alias cb="~/AutoPay/scripts/create_branch.sh"
 alias cr="~/AutoPay/scripts/create_release.sh"
 alias gcm="git commit -m"
 alias grs="git restore --staged"
+alias lzg="lazygit"
 
 # Tmux
 alias tks="tmux kill-server"
