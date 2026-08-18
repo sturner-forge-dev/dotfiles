@@ -1,3 +1,4 @@
+onboarding = false
 # Mirrors tmux config in config/tmux/tmux.conf
 # tmux session -> herdr workspace, tmux window -> herdr tab, tmux pane -> herdr pane
 
@@ -50,10 +51,10 @@ resize_mode = ["prefix+ctrl+left", "prefix+ctrl+down", "prefix+ctrl+up", "prefix
 
 # Like resize-pane on C-M-S-arrows
 # Uncomment these when new version drops
-# resize_pane_left = "ctrl+alt+shift+left"
-# resize_pane_down = "ctrl+alt+shift+down"
-# resize_pane_up = "ctrl+alt+shift+up"
-# resize_pane_right = "ctrl+alt+shift+right"
+resize_pane_left = "ctrl+alt+shift+left"
+resize_pane_down = "ctrl+alt+shift+down"
+resize_pane_up = "ctrl+alt+shift+up"
+resize_pane_right = "ctrl+alt+shift+right"
 
 # No tmux equivalent; herdr's default prefix+shift+p is taken by previous session
 rename_pane = "prefix+shift+o"
@@ -83,8 +84,7 @@ accent = "blue"
 
 # tmux drew single-line dividers between adjacent panes and no outer frame
 pane_gaps = true
-# Uncomment these when new version drops
-# pane_outer_borders = false
+pane_outer_borders = true
 
 # tmux had no scrollbar column beside its panes
 pane_scrollbars = false
@@ -99,8 +99,7 @@ prompt_new_tab_name = false
 mouse_capture = true
 
 # status-right had the zoom flag followed by #h
-# Uncomment these when new version drops
-# tab_bar_right = [{ type = "zoom" }, { type = "hostname" }]
+tab_bar_right = [{ type = "zoom" }, { type = "hostname" }]
 
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "spaces"
