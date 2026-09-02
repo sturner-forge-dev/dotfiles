@@ -8,7 +8,7 @@ fullscreen  = true
 mouse-hide-while-typing = true
 
 # theme
-theme = Catppuccin Mocha
+theme = Gruvbox Dark Hard
 
 # font
 font-size = 15.5
